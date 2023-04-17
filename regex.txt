@@ -12,6 +12,9 @@ For Regular Expression:
 
 ^(http|https)?:\/\/\w+.\w+.\w
 
+<<<<<<< HEAD
 
 This data is changed in file manager
 
+=======
+>>>>>>> ed119a9b86c0f9dbdfdf87fcb030a0ebf95dbc3c
