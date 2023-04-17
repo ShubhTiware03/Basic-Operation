@@ -11,3 +11,7 @@ For Regular Expression:
 ^[a-z0-9]+\@[gmail+yahoo]+
 
 ^(http|https)?:\/\/\w+.\w+.\w
+
+
+This data is changed in file manager
+
