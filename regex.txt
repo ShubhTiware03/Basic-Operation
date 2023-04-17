@@ -11,3 +11,5 @@ For Regular Expression:
 ^[a-z0-9]+\@[gmail+yahoo]+
 
 ^(http|https)?:\/\/\w+.\w+.\w
+
+Shubham Tiware write in github  //new
