@@ -12,4 +12,3 @@ For Regular Expression:
 
 ^(http|https)?:\/\/\w+.\w+.\w
 
-Shubham Tiware write in github  //new
