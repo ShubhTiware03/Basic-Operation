@@ -1,0 +1,134 @@
+mssql.connect(config, function(err){
+    if (err) console.log(err);
+    var request = new mssql.Request();
+    request.query('select * from users', function(err, recordSet){
+        if(err){
+            console.log(err);
+        }else{
+            console.log(recordSet);
+        }
+    });
+});
+
+app.listen(8080, () => {
+    console.log("Listning.....");
+})
+
+const express = require('express');
+const sql = require('mssql');
+
+const app = express();
+
+const config = {
+    user: 'sa',
+    password: 'amira1234',
+    server: 'DESKTOP-LJJ3P9F\\SQLEXPRESS',
+    database: 'user_library',
+    options: {
+        encrypt: true
+    }
+};
+
+const pool = new sql.ConnectionPool(config);
+
+pool.connect((err) => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log('Connected to SQL Server');
+    }
+});
+
+const query = 'SELECT * FROM users';
+
+pool.query(query, (err, result) => {
+  if (err) {
+    console.log(err);
+  } else {
+    console.log(result);
+  }
+});
+
+// start the server
+app.listen(3000, () => {
+    console.log('Server running on port 3000');
+});
+
+const sql = require("mssql/msnodesqlv8");
+
+var config = {
+    user: 'sa',
+    password: 'amira1234',
+    server: 'DESKTOP-LJJ3P9F\\SQLEXPRESS',
+    database: 'user_library',
+    driver: "msnodesqlv8",
+    options:{
+        trustedConnection: true
+    }
+}
+
+sql.connect(config, function(err){
+    if(err) console.log(err);
+    var request = new sql.Request();
+    request.query("select * from users", function(err, records){
+        if(err) console.log(err);
+        else console.log(records); 
+    })
+})
+
+host: "localhost",
+    user: "root",
+    password: "amira1234",
+    database: "user_library" 
+
+
+
+
+////////////////////////////////////////////////
+app.post('/', (req, res) => {
+    const sql = "select * from users where Username = ? and Password = ?";
+
+    db.query(sql, [req.body.email, req.body.password], (err, data) => {
+        if (err) return res.json("Error");
+        if(data.length > 0)
+            return res.json("Login Sucessful");
+        else
+            return res.json("No record Found");
+    })
+})
+
+user: 'sa',
+		password: 'amira1234',
+		server: 'DESKTOP-LJJ3P9F\\SQLEXPRESS',
+		database: 'user_library'
+
+const [username, setUsername] = useState('')
+  const [password, setPassword] = useState('')
+  const [email, setEmail] = useState('')
+  const [city, setCity] = useState('')
+  const [country, setCountry] = useState('')
+  const [date, setDate] = useState('')
+
+const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [authenticate, setAuthenticate] = useState(
+    localStorage.getItem(localStorage.getItem("authenticated") || false)
+  );
+
+axios.post("http://localhost:8081/", {email, password})
+    .then(res => console.log(res)) 
+    .catch(err => console.log(err));
+
+{error.name && <span className='text-danger'> {error.name}</span>}
+{error.password && <span className='text-danger'> {error.password}</span>}
+
+
+=========================================
+<BrowserRouter>
+>>       <Routes>
+>>         <Route path='/' element={<Login />} />
+>>       </Routes>
+>>     </BrowserRouter>
+
+
+
